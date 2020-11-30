@@ -29,9 +29,13 @@ class HomeController: UIViewController {
 		viewModel.fetchPhotos()
 		viewModel.$state
 			.receive(on: RunLoop.main)
-			.sink(receiveValue: { _ in
-				// TO-DO: handle state
-				self.collectionView.reloadData()
+			.sink(receiveValue: { state in
+				switch state {
+				case .error(let message):
+					self.alert(message: message)
+				default:
+					self.collectionView.reloadData()
+				}
 			})
 			.store(in: &bindings)
 	}
@@ -80,7 +84,6 @@ extension HomeController: UICollectionViewDataSource {
 	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		// TO-DO: Prevent fetching several times .reachedBottom State
 		if (scrollView.contentOffset.y + 1) >= (scrollView.contentSize.height - scrollView.frame.size.height) {
 			switch viewModel.state {
 			case .normal:

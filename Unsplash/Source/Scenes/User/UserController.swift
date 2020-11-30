@@ -47,8 +47,13 @@ class UserController: UIViewController, StoryboardLoadable {
 		
 		viewModel.$state
 			.receive(on: RunLoop.main)
-			.sink(receiveValue: { _ in
-				self.collectionView.reloadData()
+			.sink(receiveValue: { state in
+				switch state {
+				case .error(let message):
+					self.alert(message: message)
+				default:
+					self.collectionView.reloadData()
+				}
 			})
 			.store(in: &bindings)
 	}

@@ -32,7 +32,12 @@ final class HomeViewModel {
 				self?.photos = self?.allPhotos ?? []
 				self?.state = .normal
 			case .failure(let error):
-				print(error)
+				switch error {
+				case .unknown(let message):
+					self?.state = .error(message)
+				default:
+					self?.state = .error(error.localizedDescription)
+				}
 			}
 		})
 	}
