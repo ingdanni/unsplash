@@ -1,0 +1,36 @@
+PODS:
+  - Closures (0.7)
+  - Kingfisher (5.15.6):
+    - Kingfisher/Core (= 5.15.6)
+  - Kingfisher/Core (5.15.6)
+  - Realm (10.1.0):
+    - Realm/Headers (= 10.1.0)
+  - Realm/Headers (10.1.0)
+  - RealmSwift (10.1.0):
+    - Realm (= 10.1.0)
+  - SwiftLint (0.40.3)
+
+DEPENDENCIES:
+  - Closures
+  - Kingfisher (~> 5.0)
+  - RealmSwift
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Closures
+    - Kingfisher
+    - Realm
+    - RealmSwift
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Closures: a83b9892a5b1c4125a9dfcd53e2754db5d7f6d22
+  Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  Realm: 100df88a0faf5328f48477427e4b3e1a1598bae3
+  RealmSwift: 725d1c10df64964b04aaa0058c19ce0f4b4c3f5a
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
+
+PODFILE CHECKSUM: f7663f973ca766ed8f7e5e6bc6246159f4a8dedf
+
+COCOAPODS: 1.10.0
